@@ -51,27 +51,33 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-8">
-          <Badge
-            variant="secondary"
-            className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
-          >
-            <Code2 className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
-            Frontend
-          </Badge>
-          <Badge
-            variant="secondary"
-            className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
-          >
-            <Database className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
-            Backend
-          </Badge>
-          <Badge
-            variant="secondary"
-            className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
-          >
-            <Globe className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
-            Full Stack
-          </Badge>
+          <button>
+            <Badge
+              variant="secondary"
+              className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
+            >
+              <Code2 className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              Frontend
+            </Badge>
+          </button>
+          <button>
+            <Badge
+              variant="secondary"
+              className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
+            >
+              <Database className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              Backend
+            </Badge>
+          </button>
+          <button>
+            <Badge
+              variant="secondary"
+              className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
+            >
+              <Globe className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              Full Stack
+            </Badge>
+          </button>
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">

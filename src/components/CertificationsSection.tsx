@@ -110,7 +110,7 @@ const CertificationsSection = () => {
 
         {/* Single Card with All Certifications */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card rounded-lg border border-border overflow-hidden shadow-sm">
+          <div className="bg-card rounded-md border border-border overflow-hidden shadow-sm">
             {/* Certification Images Carousel */}
             <div className="relative bg-secondary/30">
               <div className="absolute top-4 left-4 z-10">
