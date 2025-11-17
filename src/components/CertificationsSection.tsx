@@ -22,7 +22,7 @@ const certifications = [
     title: "Frontend Masters JS Certificate",
     issuer: "Frontend Masters",
     date: "Feb 27,2025",
-    images: ["/public/certif/FM.png"],
+    images: ["/certif/FM.png"],
   },
   
   {
@@ -30,7 +30,7 @@ const certifications = [
     title: "Redig Internship Certificate",
     issuer: "Redig Agency",
     date: "Oct 22, 2025 ",
-    images: ["/public/certif/redig.jpg","/public/certif/RL.jpeg"],
+    images: ["/certif/redig.jpg","/certif/RL.jpeg"],
   },
 ];
 
