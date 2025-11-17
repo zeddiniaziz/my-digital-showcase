@@ -1,14 +1,16 @@
 import { Badge } from "@/components/ui/badge";
+import { ZapIcon } from "lucide-react";
 
 const skills = {
   Frontend: [
     "React",
+    "Vite",
     "TypeScript",
     "JavaScript",
     "HTML5",
     "CSS3",
     "Tailwind CSS",
-    "Redux",
+    "Angular",
     "Next.js",
   ],
   Backend: [
@@ -17,19 +19,22 @@ const skills = {
     "MongoDB",
     "PostgreSQL",
     "REST APIs",
-    "GraphQL",
     "Authentication",
     "Supabase",
   ],
   Tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Docker", "Vercel", "AWS"],
+  Concepts: ["MVC Architecture", "Database Design", "API Development", "Testing"]
 };
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-sm text-primary uppercase tracking-wider mb-4">Skills</h2>
+    <section id="skills" className="py-24 px-0">
+      <div className="container mx-auto border-t border-gray-300 py-4">
+        <div className="text-center mb-6">
+          <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
+            <ZapIcon className="w-5 h-5 text-primary" />
+            <span>Skills</span>
+          </h2>
           <h3 className="text-4xl md:text-5xl font-bold mb-6">Technical Expertise</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Technologies and tools I use to bring ideas to life
@@ -44,7 +49,7 @@ const SkillsSection = () => {
                 {items.map((skill, index) => (
                   <Badge
                     key={index}
-                    className="px-4 py-2 text-sm bg-card hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                    className="border-boreder text-gray-700 px-4 py-2 text-sm bg-card hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                   >
                     {skill}
                   </Badge>
