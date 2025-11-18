@@ -117,7 +117,7 @@ const HeroSection = () => {
             <Github className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
           <a
-            href="https://www.linkedin.com/in/zeddini-mohamed-aziz-2b535a35a/"
+            href="https://www.linkedin.com/in/zeddini-mohamed-aziz/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-blue-500 transition-colors group"
