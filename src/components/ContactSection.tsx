@@ -76,7 +76,7 @@ const ContactSection = () => {
 
               <Card className="bg-card border-border hover:border-blue-500 transition-colors group cursor-pointer">
                 <a
-                  href="https://www.linkedin.com/in/zeddini-mohamed-aziz-2b535a35a/"
+                  href="https://www.linkedin.com/in/zeddini-mohamed-aziz/"
                   target="_blank"
                   rel="noreferrer"
                   className="block"
