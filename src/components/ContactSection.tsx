@@ -171,7 +171,7 @@ const ContactSection = () => {
                       className="bg-primary text-primary-foreground hover:bg-primary/90"
                       asChild
                     >
-                      <a href="mailto:your@email.com">
+                      <a href="mailto:zeddini.medaziz3024@istic.ucar.tn">
                         <Send />
                         Send Email
                       </a>
