@@ -380,15 +380,15 @@ const ProjectsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.number === "02" ? (
-                      <>
-                        <Github className="w-4 h-4 mr-2" />
-                        View Source
-                      </>
-                    ) : (
+                    {project.number === "01" ? (
                       <>
                         <ExternalLink className="w-4 h-4 mr-2" />
                         View Live
+                      </>
+                    ) : (
+                      <>
+                        <Github className="w-4 h-4 mr-2" />
+                        View Source
                       </>
                     )}
                   </a>
