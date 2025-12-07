@@ -125,7 +125,39 @@ const projects = [
     liveUrl: "https://github.com/zeddiniaziz/vetcare", // if you want another URL, tell me
   },
   {
-    number: "03",
+  number: "03",
+  title: "Intelligent Hybrid Chatbot",
+  subtitle: "Semantic Search, Anomaly Detection & LLM Integration",
+  categoryTags: ["Machine Learning", "NLP", "AI"],
+  description:
+    "An intelligent AI-powered chatbot built with a hybrid architecture combining semantic search (RAG), context detection, anomaly classification, and LLM integration. Designed to understand automotive-related inquiries through embeddings-based retrieval and differentiate between domain-specific and general questions with adaptive response routing.",
+  statusBadges: [
+    "Hybrid AI Architecture",
+    "Semantic Search Engine",
+    "LLM Fallback System"
+  ],
+  techStack: [
+    "Python",
+    "Sentence Transformers",
+    "scikit-learn",
+    "NLTK",
+    "OpenAI API"
+  ],
+  keyFeatures: [
+    "RAG pipeline with embedding-based query matching",
+    "Context detection for domain-specific vs general questions",
+    "Similarity scoring using Semantic Search Engine",
+    "Anomaly detection with Isolation Forest for out-of-context queries",
+    "Fallback response generation using OpenAI LLM",
+    "Clean text preprocessing with tokenization and stopword removal"
+  ],
+  images: [
+    "/chatbot/1.png",
+  ],
+  liveUrl: "https://github.com/zeddiniaziz/intelligent-chatbot" // change if needed
+},
+{
+    number: "04",
     title: "Full-Stack Todo App",
     subtitle: "JWT Authentication & Containerized Deployment",
     categoryTags: ["Backend", "Authentication", "Docker"],
@@ -165,38 +197,6 @@ const projects = [
     ],
     liveUrl: "https://github.com/zeddiniaziz/fullstack-todo-app",
   },
-  {
-  number: "04",
-  title: "Intelligent Hybrid Chatbot",
-  subtitle: "Semantic Search, Anomaly Detection & LLM Integration",
-  categoryTags: ["Machine Learning", "NLP", "AI"],
-  description:
-    "An intelligent AI-powered chatbot built with a hybrid architecture combining semantic search (RAG), context detection, anomaly classification, and LLM integration. Designed to understand automotive-related inquiries through embeddings-based retrieval and differentiate between domain-specific and general questions with adaptive response routing.",
-  statusBadges: [
-    "Hybrid AI Architecture",
-    "Semantic Search Engine",
-    "LLM Fallback System"
-  ],
-  techStack: [
-    "Python",
-    "Sentence Transformers",
-    "scikit-learn",
-    "NLTK",
-    "OpenAI API"
-  ],
-  keyFeatures: [
-    "RAG pipeline with embedding-based query matching",
-    "Context detection for domain-specific vs general questions",
-    "Similarity scoring using Semantic Search Engine",
-    "Anomaly detection with Isolation Forest for out-of-context queries",
-    "Fallback response generation using OpenAI LLM",
-    "Clean text preprocessing with tokenization and stopword removal"
-  ],
-  images: [
-    "/chatbot/1.png",
-  ],
-  liveUrl: "https://github.com/zeddiniaziz/intelligent-chatbot" // change if needed
-},
 ];
 
 const ProjectsSection = () => {
