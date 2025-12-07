@@ -108,16 +108,16 @@ const Navigation = () => {
                 About
               </button>
               <button
+                onClick={() => handleScrollToSection("skills")}
+                className="text-left text-muted-foreground hover:text-primary transition-colors"
+              >
+                Skills
+              </button>
+              <button
                 onClick={() => handleScrollToSection("projects")}
                 className="text-left text-muted-foreground hover:text-primary transition-colors"
               >
                 Projects
-              </button>
-              <button
-                onClick={() => handleScrollToSection("contact")}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
-              >
-                Contact
               </button>
               <div className="pt-2">
                 <Button
