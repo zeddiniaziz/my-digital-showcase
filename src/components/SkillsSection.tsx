@@ -23,6 +23,7 @@ const skills = {
     "REST APIs",
     "Authentication",
     "Authorization",
+    "Role based access control",
     "Supabase",
   ],
   "AI & Machine Learning": [
