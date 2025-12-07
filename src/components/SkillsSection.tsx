@@ -16,14 +16,15 @@ const skills = {
   Backend: [
     "Node.js",
     "Express",
+    "Java Spring Boot",
     "MongoDB",
     "PostgreSQL",
     "REST APIs",
     "Authentication",
     "Supabase",
   ],
-  Tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Docker", "Vercel", "AWS"],
-  Concepts: ["MVC Architecture", "Database Design", "API Development", "Testing"]
+  Tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Docker", "Vercel", "Netlify Hosting"],
+  Concepts: ["MVC Architecture", "Database Design", "API Development", "ORM", "OOP", "Testing"]
 };
 
 const SkillsSection = () => {
