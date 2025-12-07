@@ -24,7 +24,9 @@ const skills = {
     "Authentication",
     "Authorization",
     "Role based access control",
-    "Supabase",
+    "JWT",
+    "Session management",
+    "Baas-Supabase",
   ],
   "AI & Machine Learning": [
     "Machine Learning",
