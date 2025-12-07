@@ -15,7 +15,7 @@ const skills = {
   ],
   Backend: [
     "Node.js",
-    "Express",
+    "Express.js",
     "Java Spring Boot",
     "MongoDB",
     "PostgreSQL",
