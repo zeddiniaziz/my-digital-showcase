@@ -80,7 +80,7 @@ const projects = [
     number: "02",
     title: "VetCare Management System",
     subtitle: "Full Veterinary Clinic Management Platform",
-    categoryTags: ["Spring Boot", "React", "Fullstack"],
+    categoryTags: ["Java Spring Boot 3", "React", "Fullstack"],
     description:
       "A complete veterinary clinic management system featuring animal records, owner management, appointment scheduling, advanced search endpoints, and a fully typed frontend built with React + TypeScript, integrated with a Spring Boot REST API.",
     statusBadges: [
