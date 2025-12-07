@@ -42,7 +42,7 @@ const skills = {
     "Python"
   ],
   Tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Docker", "Vercel", "Netlify Hosting"],
-  Concepts: ["MVC Architecture", "Database Design", "API Development", "ORM", "OOP", "Testing"]
+  Concepts: ["MVC Architecture", "Database Modeling & Management", "System design-UML", "API Development", "ORM", "OOP", "Asynchronous programming", "Testing"]
 };
 
 const SkillsSection = () => {
