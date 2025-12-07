@@ -19,8 +19,10 @@ const skills = {
     "Java Spring Boot",
     "MongoDB",
     "PostgreSQL",
+    "MySQL",
     "REST APIs",
     "Authentication",
+    "Authorization",
     "Supabase",
   ],
   "AI & Machine Learning": [
