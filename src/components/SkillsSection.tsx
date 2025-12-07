@@ -23,6 +23,19 @@ const skills = {
     "Authentication",
     "Supabase",
   ],
+  "AI & Machine Learning": [
+    "Machine Learning",
+    "Natural Language Processing (NLP)",
+    "Semantic Search",
+    "Sentence Transformers",
+    "Embeddings",
+    "Isolation Forest",
+    "Anomaly Detection",
+    "OpenAI LLM Integration",
+    "NLTK",
+    "scikit-learn",
+    "Python"
+  ],
   Tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Docker", "Vercel", "Netlify Hosting"],
   Concepts: ["MVC Architecture", "Database Design", "API Development", "ORM", "OOP", "Testing"]
 };
