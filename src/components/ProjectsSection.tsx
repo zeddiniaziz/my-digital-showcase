@@ -279,7 +279,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-14 sm:space-y-12">
+        <div className="space-y-14 sm:space-y-0">
           {projects.map((project, index) => (
             <div
               key={index}
