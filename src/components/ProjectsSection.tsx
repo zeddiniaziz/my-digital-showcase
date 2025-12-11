@@ -125,38 +125,36 @@ const projects = [
     liveUrl: "https://github.com/zeddiniaziz/vetcare", // if you want another URL, tell me
   },
   {
-  number: "03",
-  title: "Intelligent Hybrid Chatbot",
-  subtitle: "Semantic Search, Anomaly Detection & LLM Integration",
-  categoryTags: ["Machine Learning", "NLP", "AI"],
-  description:
-    "An intelligent AI-powered chatbot built with a hybrid architecture combining semantic search (RAG), context detection, anomaly classification, and LLM integration. Designed to understand automotive-related inquiries through embeddings-based retrieval and differentiate between domain-specific and general questions with adaptive response routing.",
-  statusBadges: [
-    "Hybrid AI Architecture",
-    "Semantic Search Engine",
-    "LLM Fallback System"
-  ],
-  techStack: [
-    "Python",
-    "Sentence Transformers",
-    "scikit-learn",
-    "NLTK",
-    "OpenAI API"
-  ],
-  keyFeatures: [
-    "RAG pipeline with embedding-based query matching",
-    "Context detection for domain-specific vs general questions",
-    "Similarity scoring using Semantic Search Engine",
-    "Anomaly detection with Isolation Forest for out-of-context queries",
-    "Fallback response generation using OpenAI LLM",
-    "Clean text preprocessing with tokenization and stopword removal"
-  ],
-  images: [
-    "/chatbot/1.png",
-  ],
-  liveUrl: "https://github.com/zeddiniaziz/intelligent-chatbot" // change if needed
-},
-{
+    number: "03",
+    title: "Intelligent Hybrid Chatbot",
+    subtitle: "Semantic Search, Anomaly Detection & LLM Integration",
+    categoryTags: ["Machine Learning", "NLP", "AI"],
+    description:
+      "An intelligent AI-powered chatbot built with a hybrid architecture combining semantic search (RAG), context detection, anomaly classification, and LLM integration. Designed to understand automotive-related inquiries through embeddings-based retrieval and differentiate between domain-specific and general questions with adaptive response routing.",
+    statusBadges: [
+      "Hybrid AI Architecture",
+      "Semantic Search Engine",
+      "LLM Fallback System",
+    ],
+    techStack: [
+      "Python",
+      "Sentence Transformers",
+      "scikit-learn",
+      "NLTK",
+      "OpenAI API",
+    ],
+    keyFeatures: [
+      "RAG pipeline with embedding-based query matching",
+      "Context detection for domain-specific vs general questions",
+      "Similarity scoring using Semantic Search Engine",
+      "Anomaly detection with Isolation Forest for out-of-context queries",
+      "Fallback response generation using OpenAI LLM",
+      "Clean text preprocessing with tokenization and stopword removal",
+    ],
+    images: ["/chatbot/1.png"],
+    liveUrl: "https://github.com/zeddiniaziz/intelligent-chatbot", // change if needed
+  },
+  {
     number: "04",
     title: "Full-Stack Todo App",
     subtitle: "JWT Authentication & Containerized Deployment",
@@ -203,8 +201,11 @@ const ProjectsSection = () => {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [fullscreenProjectIndex, setFullscreenProjectIndex] = useState(0);
   const [fullscreenImageIndex, setFullscreenImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Handle keyboard navigation
+  // Handle keyboard navigation and swipe
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (!fullscreenImage) return;
@@ -215,6 +216,29 @@ const ProjectsSection = () => {
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [fullscreenImage, fullscreenProjectIndex, fullscreenImageIndex]);
+
+  // Handle swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe(e);
+  };
+
+  const handleSwipe = (e: React.TouchEvent) => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNextImageWithTransition();
+    } else if (isRightSwipe) {
+      handlePrevImageWithTransition();
+    }
+  };
 
   const handleImageClick = (
     projectIndex: number,
@@ -244,6 +268,22 @@ const ProjectsSection = () => {
       fullscreenImageIndex < lastIndex ? fullscreenImageIndex + 1 : 0;
     setFullscreenImageIndex(newIndex);
     setFullscreenImage(project.images[newIndex]);
+  };
+
+  const handlePrevImageWithTransition = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      handlePrevImage();
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const handleNextImageWithTransition = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      handleNextImage();
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const currentProject = projects[fullscreenProjectIndex];
@@ -444,20 +484,26 @@ const ProjectsSection = () => {
           </button>
 
           {/* Image Container with Navigation Arrows */}
-          <div className="relative w-full h-full flex items-center justify-center px-4 py-16">
+          <div
+            className="relative w-full h-full flex items-center justify-center px-4 py-16"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <img
               src={fullscreenImage}
               alt={`${currentProject.title} fullscreen ${
                 fullscreenImageIndex + 1
               }`}
-              className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
+              className={`max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain transition-opacity duration-150 ${
+                isTransitioning ? "opacity-50" : "opacity-100"
+              }`}
             />
 
             {/* Previous Button */}
             <Button
               variant="outline"
               size="icon"
-              onClick={handlePrevImage}
+              onClick={handlePrevImageWithTransition}
               className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -468,7 +514,7 @@ const ProjectsSection = () => {
             <Button
               variant="outline"
               size="icon"
-              onClick={handleNextImage}
+              onClick={handleNextImageWithTransition}
               className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
             >
               <ChevronRight className="h-4 w-4" />
