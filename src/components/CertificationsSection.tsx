@@ -30,7 +30,7 @@ const certifications = [
     title: "Redig Internship Certificate",
     issuer: "Redig Agency",
     date: "Oct 22, 2025 ",
-    images: ["/certif/redig.jpg", "/certif/RL.jpeg"],
+    images: ["/certif/redig.jpeg", "/certif/RL.jpeg"],
   },
 ];
 
