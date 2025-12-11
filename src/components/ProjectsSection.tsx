@@ -327,11 +327,7 @@ const ProjectsSection = () => {
             >
               {/* Project Number & Images Carousel */}
               <div className="relative bg-secondary/30">
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-                  <span className="text-6xl sm:text-8xl font-bold text-primary/20">
-                    {project.number}
-                  </span>
-                </div>
+            
 
                 <Carousel className="w-full" opts={{ loop: true }}>
                   <CarouselContent>
@@ -362,7 +358,7 @@ const ProjectsSection = () => {
                 {/* Title & Category Tags */}
                 <div className="mb-6">
                   <h4 className="text-2xl sm:text-3xl font-bold mb-2">
-                    {project.title}
+                    <span className="text-primary/20">{project.number}</span>-{project.title}
                   </h4>
                   <p className="text-lg text-muted-foreground mb-4">
                     {project.subtitle}
