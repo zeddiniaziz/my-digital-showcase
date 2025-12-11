@@ -254,7 +254,7 @@ const ContactSection = () => {
                     <div>
                       <h4 className="font-bold mb-1">Languages</h4>
                       <p className="text-muted-foreground">
-                        English, French, Arabic
+                        English, French, German-A2, Arabic 
                       </p>
                       <p className="text-xs text-muted-foreground">
                         Multilingual communication
