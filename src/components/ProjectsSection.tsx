@@ -290,7 +290,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="w-full py-24 bg-secondary/30">
       <div className="md:container lg:container mx-2 border-t border-gray-300 py-4">
-        <div className="sm:px-3 text-center mb-16">
+        <div className="px-2 text-center mb-16">
           <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
             <PresentationIcon className="w-5 h-5 text-primary" />
             <span>My work</span>
