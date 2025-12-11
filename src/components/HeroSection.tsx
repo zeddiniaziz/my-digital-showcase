@@ -117,7 +117,7 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <div className="flex gap-4 justify-center mb-12">
+        <div className="flex gap-4 justify-center mb-3">
           <a
             href="https://github.com/zeddiniaziz"
             target="_blank"
