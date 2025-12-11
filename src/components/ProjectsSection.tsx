@@ -248,9 +248,9 @@ const ProjectsSection = () => {
 
   const currentProject = projects[fullscreenProjectIndex];
   return (
-    <section id="projects" className="py-24 px-0 bg-secondary/30">
-      <div className="container mx-auto border-t border-gray-300 py-4">
-        <div className="text-center mb-16">
+    <section id="projects" className="w-full py-24 bg-secondary/30">
+      <div className="md:container lg:container mx-2 border-t border-gray-300 py-4">
+        <div className="sm:px-3 text-center mb-16">
           <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
             <PresentationIcon className="w-5 h-5 text-primary" />
             <span>My work</span>
@@ -283,7 +283,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-card rounded-md border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card rounded-sm border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Project Number & Images Carousel */}
               <div className="relative bg-secondary/30">
@@ -412,15 +412,15 @@ const ProjectsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.number === "01" ? (
-                      <>
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Live
-                      </>
-                    ) : (
+                    {project.number === "02" ? (
                       <>
                         <Github className="w-4 h-4 mr-2" />
                         View Source
+                      </>
+                    ) : (
+                      <>
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Live
                       </>
                     )}
                   </a>
@@ -433,44 +433,48 @@ const ProjectsSection = () => {
 
       {/* Fullscreen Image Viewer */}
       {fullscreenImage && currentProject && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
           {/* Close Button */}
           <button
             onClick={() => setFullscreenImage(null)}
-            className="absolute top-4 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-20"
             aria-label="Close fullscreen"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-4 h-4 text-white" />
           </button>
 
-          {/* Previous Button (always enabled for circular navigation) */}
-          <button
-            onClick={handlePrevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
-            aria-label="Previous image"
-          >
-            <ChevronLeft className="w-8 h-8 text-white" />
-          </button>
-
-          {/* Image Container */}
-          <div className="w-full h-full flex items-center justify-center p-20">
+          {/* Image Container with Navigation Arrows */}
+          <div className="relative w-full h-full flex items-center justify-center px-4 py-16">
             <img
               src={fullscreenImage}
               alt={`${currentProject.title} fullscreen ${
                 fullscreenImageIndex + 1
               }`}
-              className="max-w-full max-h-full object-contain"
+              className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
             />
-          </div>
 
-          {/* Next Button (always enabled for circular navigation) */}
-          <button
-            onClick={handleNextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
-            aria-label="Next image"
-          >
-            <ChevronRight className="w-8 h-8 text-white" />
-          </button>
+            {/* Previous Button */}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handlePrevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              <span className="sr-only">Previous slide</span>
+            </Button>
+
+            {/* Next Button */}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleNextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
+            >
+              <ChevronRight className="h-4 w-4" />
+              <span className="sr-only">Next slide</span>
+            </Button>
+          </div>
 
           {/* Image Counter */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
