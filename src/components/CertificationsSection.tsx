@@ -24,13 +24,13 @@ const certifications = [
     date: "Feb 27,2025",
     images: ["/certif/FM.png"],
   },
-  
+
   {
     id: "c2",
     title: "Redig Internship Certificate",
     issuer: "Redig Agency",
     date: "Oct 22, 2025 ",
-    images: ["/certif/redig.jpeg","/certif/RL.jpeg"],
+    images: ["/certif/redig.jpg", "/certif/RL.jpeg"],
   },
 ];
 
@@ -39,6 +39,9 @@ const CertificationsSection = () => {
   const [fullscreenCertIndex, setFullscreenCertIndex] = useState(0);
   const [fullscreenImageIndex, setFullscreenImageIndex] = useState(0);
   const [currentCertIndex, setCurrentCertIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -50,6 +53,29 @@ const CertificationsSection = () => {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [fullscreenImage, fullscreenCertIndex, fullscreenImageIndex]);
+
+  // Handle swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe(e);
+  };
+
+  const handleSwipe = (e: React.TouchEvent) => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNextImageWithTransition();
+    } else if (isRightSwipe) {
+      handlePrevImageWithTransition();
+    }
+  };
 
   const handleImageClick = (
     certIndex: number,
@@ -77,6 +103,22 @@ const CertificationsSection = () => {
     setFullscreenImage(cert.images[newIndex]);
   };
 
+  const handlePrevImageWithTransition = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      handlePrevImage();
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const handleNextImageWithTransition = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      handleNextImage();
+      setIsTransitioning(false);
+    }, 150);
+  };
+
   const handlePrevCert = () => {
     const newIndex =
       currentCertIndex > 0 ? currentCertIndex - 1 : certifications.length - 1;
@@ -92,8 +134,8 @@ const CertificationsSection = () => {
   const currentCert = certifications[currentCertIndex];
 
   return (
-    <section id="certifications" className="py-24 px-0 bg-secondary/30">
-      <div className="container mx-auto">
+    <section id="certifications" className="py-2 px-0 bg-secondary/30">
+      <div className="md:container lg:container mx-2 pt-5 border-t border-gray-300">
         <div className="text-center mb-12">
           <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
             <PresentationIcon className="w-5 h-5 text-primary" />
@@ -156,7 +198,6 @@ const CertificationsSection = () => {
               </div>
 
               <div className="flex gap-4 items-center mb-6">
-                
                 <Badge variant="secondary" className="px-3 py-1">
                   Verified
                 </Badge>
@@ -202,40 +243,50 @@ const CertificationsSection = () => {
 
       {/* Fullscreen Viewer (same behavior as projects) */}
       {fullscreenImage && currentCert && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
           <button
             onClick={() => setFullscreenImage(null)}
-            className="absolute top-4 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-20"
             aria-label="Close fullscreen"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-4 h-4 text-white" />
           </button>
 
-          <button
-            onClick={handlePrevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
-            aria-label="Previous image"
+          <div
+            className="relative w-full h-full flex items-center justify-center px-4 py-16"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
-            <ChevronLeft className="w-8 h-8 text-white" />
-          </button>
-
-          <div className="w-full h-full flex items-center justify-center p-16">
             <img
               src={fullscreenImage}
               alt={`${currentCert.title} fullscreen ${
                 fullscreenImageIndex + 1
               }`}
-              className="max-w-full max-h-full object-contain"
+              className={`max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain transition-opacity duration-150 ${
+                isTransitioning ? "opacity-50" : "opacity-100"
+              }`}
             />
-          </div>
 
-          <button
-            onClick={handleNextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors z-10"
-            aria-label="Next image"
-          >
-            <ChevronRight className="w-8 h-8 text-white" />
-          </button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handlePrevImageWithTransition}
+              className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              <span className="sr-only">Previous slide</span>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleNextImageWithTransition}
+              className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
+            >
+              <ChevronRight className="h-4 w-4" />
+              <span className="sr-only">Next slide</span>
+            </Button>
+          </div>
 
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
             {fullscreenImageIndex + 1} / {currentCert.images.length}
