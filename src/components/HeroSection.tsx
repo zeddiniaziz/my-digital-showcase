@@ -4,6 +4,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Bot,
   ChevronDown,
   Database,
   Code2,
@@ -76,6 +77,15 @@ const HeroSection = () => {
             >
               <Globe className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Full Stack
+            </Badge>
+          </button>
+          <button>
+            <Badge
+              variant="secondary"
+              className="group px-4 py-2 text-sm hover:border-primary transition-transform duration-500"
+            >
+              <Bot className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              AI & Machine Learning
             </Badge>
           </button>
         </div>
