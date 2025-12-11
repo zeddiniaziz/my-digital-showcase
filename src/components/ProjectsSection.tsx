@@ -448,7 +448,7 @@ const ProjectsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.number === "02" ? (
+                    {project.number !== "01" ? (
                       <>
                         <Github className="w-4 h-4 mr-2" />
                         View Source
