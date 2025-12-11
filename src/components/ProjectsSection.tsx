@@ -358,7 +358,7 @@ const ProjectsSection = () => {
                 {/* Title & Category Tags */}
                 <div className="mb-6">
                   <h4 className="text-2xl sm:text-3xl font-bold mb-2">
-                    <span className="text-primary/20">{project.number}</span>-{project.title}
+                    <span className="text-primary">{project.number}</span>{" "}{project.title}
                   </h4>
                   <p className="text-lg text-muted-foreground mb-4">
                     {project.subtitle}
