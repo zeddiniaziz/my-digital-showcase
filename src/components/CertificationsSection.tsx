@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   PresentationIcon,
   ExternalLink,
+  CheckCircle,
   X,
   ChevronLeft,
   ChevronRight,
@@ -197,11 +198,11 @@ const CertificationsSection = () => {
                 </p>
               </div>
 
-              <div className="flex gap-4 items-center mb-6">
-                <Badge variant="secondary" className="px-3 py-1">
-                  Verified
+              <button className="flex gap-4 items-center mb-6">
+                <Badge variant="outline" className="bg-green-600 border-green-600 text-white px-3 py-1">
+                  Verified <CheckCircle className="w-3 h-3 inline-block ml-1" />
                 </Badge>
-              </div>
+              </button>
 
               {/* Certification Navigation Dots */}
               <div className="flex gap-2 items-center justify-center pt-4 border-t border-border">
