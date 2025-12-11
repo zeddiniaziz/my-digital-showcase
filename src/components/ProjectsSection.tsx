@@ -298,24 +298,24 @@ const ProjectsSection = () => {
           <h3 className="text-4xl md:text-5xl font-bold mb-6">
             Featured Projects
           </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg px-4 sm:px-0 leading-relaxed">
             A collection of projects showcasing my
-            <span className="text-primary font-bold">
+            <span className="text-primary font-semibold">
               {" "}
               full-stack development
             </span>{" "}
             skills. From{" "}
-            <span className="text-primary font-bold">
+            <span className="text-primary font-semibold">
               {" "}
               enterprise platforms
             </span>{" "}
             to
-            <span className="text-primary font-bold"> SaaS solutions</span>,
+            <span className="text-primary font-semibold"> SaaS solutions</span>,
             each project reflects my commitment to
-            <span className="text-primary font-bold"> performance</span>,
-            <span className="text-primary font-bold"> scalability</span>, and
-            exceptional{" "}
-            <span className="text-primary font-bold">user experience</span>.
+            <span className="text-primary font-semibold"> performance</span>,
+            <span className="text-primary font-semibold"> scalability</span>,
+            and exceptional{" "}
+            <span className="text-primary font-semibold">user experience</span>.
           </p>
         </div>
 
@@ -367,7 +367,7 @@ const ProjectsSection = () => {
                   <p className="text-lg text-muted-foreground mb-4">
                     {project.subtitle}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <button className="flex flex-wrap gap-2">
                     {project.categoryTags.map((tag, tagIndex) => (
                       <Badge
                         key={tagIndex}
@@ -377,7 +377,7 @@ const ProjectsSection = () => {
                         {tag}
                       </Badge>
                     ))}
-                  </div>
+                  </button>
                 </div>
 
                 {/* Description */}
@@ -388,12 +388,12 @@ const ProjectsSection = () => {
                 {/* Status Badges */}
                 <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 pb-6 border-b border-border">
                   {project.statusBadges.map((badge, badgeIndex) => (
-                    <div
+                    <button
                       key={badgeIndex}
                       className="px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary rounded-full text-xs sm:text-sm font-medium hover:bg-primary hover:text-white"
                     >
                       {badge}
-                    </div>
+                    </button>
                   ))}
                 </div>
 
@@ -405,7 +405,7 @@ const ProjectsSection = () => {
                       Tech Stack
                     </h5>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <button className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, techIndex) => (
                       <Badge
                         key={techIndex}
@@ -415,7 +415,7 @@ const ProjectsSection = () => {
                         {tech}
                       </Badge>
                     ))}
-                  </div>
+                  </button>
                 </div>
 
                 {/* Key Features */}
