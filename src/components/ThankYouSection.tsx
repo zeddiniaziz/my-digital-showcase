@@ -9,20 +9,20 @@ const ThankYouSection = () => {
         <div className="pb-20 space-y-8 animate-fade-in">
           {/* Badge */}
           <div className="inline-flex items-center gap-1 px-2 py-2 rounded-full border-2 border-primary/30 bg-primary/5">
-            <Heart className="w-3 h-3 md:w-5 md:h-5 text-primary" />
-            <span className="text-msm md:text-[20px] font-medium text-primary">
+            <Heart className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+            <span className="text-mlg md:text-[20px] font-medium text-primary">
               Thank you for your time!
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-mt1 md:text-6xl font-bold mb-6 leading-tight">
             Let's Build Something Amazing{" "}
             <span className="text-primary">Together</span>
           </h2>
 
           {/* Description */}
-          <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg sm:px-0 leading-relaxedg">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg px-6 md:px-0 leading-relaxedg">
             I'm excited about the opportunity to contribute to your team, learn
             from experienced developers, and help create impactful solutions.
             Ready to start this journey!
