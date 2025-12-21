@@ -60,7 +60,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Code2 className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Code2 className="w-4 h-4 md:w-5 md:h-5 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Frontend
             </Badge>
           </button>
@@ -69,7 +69,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Database className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Database className="w-4 h-4 md:w-5 md:h-5 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Backend
             </Badge>
           </button>
@@ -78,7 +78,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Globe className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Globe className="w-4 h-4 md:w-5 md:h-5 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Full Stack
             </Badge>
           </button>
@@ -87,7 +87,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Bot className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Bot className="w-4 h-4 md:w-5 md:h-5 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               AI & ML
             </Badge>
           </button>
