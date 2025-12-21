@@ -323,7 +323,7 @@ const ProjectsSection = () => {
           <h3 className="text-m4xl md:text-5xl font-bold mb-6 px-4">
             Featured Projects
           </h3>
-          <p className="text-muted-foreground max-w-5xl mx-auto text-base sm:text-lg px-4 sm:px-0 leading-relaxed">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg px-4 sm:px-0 leading-relaxed">
             A collection of projects showcasing my
             <span className="text-primary font-bold">
               {" "}
@@ -334,8 +334,6 @@ const ProjectsSection = () => {
               {" "}
               enterprise platforms
             </span>{" "}
-          </p>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg px-4 sm:px-0 leading-relaxed">
             to
             <span className="text-primary font-bold"> SaaS solutions</span>,
             each project reflects my commitment to
