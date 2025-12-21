@@ -37,7 +37,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button onClick={() => scrollToSection("home")}>
-            <h2 className="text-xl font-bold">
+            <h2 className="text-mlg md:text-xl font-bold">
               <span className="text-foreground">Mohamed Aziz</span>{" "}
               <span className="text-primary">Zeddini</span>
             </h2>
@@ -85,9 +85,9 @@ const Navigation = () => {
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
-              <X className="w-6 h-6" />
+              <X className="md:w-6 md:h-6" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="md:w-6 md:h-6" />
             )}
           </button>
         </div>
