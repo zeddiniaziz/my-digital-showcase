@@ -151,7 +151,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors group"
           >
-            <Mail className="w-5 h-5 md:w-6 md:h-6transition-transform duration-500 group-hover:rotate-12" />
+            <Mail className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
         </div>
 
