@@ -179,7 +179,7 @@ const CertificationsSection = () => {
                           </p>
                         </div>
 
-                        <button className="flex gap-4 items-center mb-6">
+                        <button className="flex gap-4 items-center">
                           <Badge
                             variant="outline"
                             className="bg-green-600 border-green-600 text-white px-3 py-1"
