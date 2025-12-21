@@ -60,7 +60,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Code2 className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Code2 className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Frontend
             </Badge>
           </button>
@@ -69,7 +69,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Database className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Database className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Backend
             </Badge>
           </button>
@@ -78,7 +78,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Globe className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Globe className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               Full Stack
             </Badge>
           </button>
@@ -87,7 +87,7 @@ const HeroSection = () => {
               variant="secondary"
               className="group px-4 py-2 text-msm md:text-sm hover:border-primary transition-transform duration-500"
             >
-              <Bot className="mr-1 group-hover:rotate-12 transition-transform duration-500" />
+              <Bot className="w-4 h-4 md:w-8 md:h-6 mr-1 group-hover:rotate-12 transition-transform duration-500" />
               AI & ML
             </Badge>
           </button>
@@ -127,7 +127,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors group"
           >
-            <Github className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <Github className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
           <a
             href="https://wa.me/21699662660"
@@ -135,7 +135,7 @@ const HeroSection = () => {
             rel="noreferrer"
             className="text-muted-foreground hover:text-green-400 transition-colors group"
           >
-            <Phone className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <Phone className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
           <a
             href="https://www.linkedin.com/in/zeddini-mohamed-aziz/"
@@ -143,7 +143,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-blue-500 transition-colors group"
           >
-            <Linkedin className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <Linkedin className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
           <a
             href="mailto:zeddini.medaziz3024@istic.ucar.tn"
@@ -151,7 +151,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors group"
           >
-            <Mail className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <Mail className="w-5 h-5 md:w-6 md:h-6transition-transform duration-500 group-hover:rotate-12" />
           </a>
         </div>
 
