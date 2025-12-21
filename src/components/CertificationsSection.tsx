@@ -31,7 +31,7 @@ const certifications = [
     title: "Redig Internship Certificate",
     issuer: "Redig Agency",
     date: "Oct 22, 2025 ",
-    images: ["/certif/redig.jpeg", "/certif/RL.jpeg"],
+    images: ["/certif/redig.jpeg"],
   },
 ];
 
@@ -39,7 +39,6 @@ const CertificationsSection = () => {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [fullscreenCertIndex, setFullscreenCertIndex] = useState(0);
   const [fullscreenImageIndex, setFullscreenImageIndex] = useState(0);
-  const [currentCertIndex, setCurrentCertIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -120,20 +119,6 @@ const CertificationsSection = () => {
     }, 150);
   };
 
-  const handlePrevCert = () => {
-    const newIndex =
-      currentCertIndex > 0 ? currentCertIndex - 1 : certifications.length - 1;
-    setCurrentCertIndex(newIndex);
-  };
-
-  const handleNextCert = () => {
-    const newIndex =
-      currentCertIndex < certifications.length - 1 ? currentCertIndex + 1 : 0;
-    setCurrentCertIndex(newIndex);
-  };
-
-  const currentCert = certifications[currentCertIndex];
-
   return (
     <section id="certifications" className="w-full py-2 bg-background">
       <div className="md:container lg:container mx-2 pt-5 border-t border-gray-300">
@@ -156,99 +141,68 @@ const CertificationsSection = () => {
         {/* Single Card with All Certifications */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-card rounded-md border border-border overflow-hidden shadow-sm">
-            {/* Certification Images Carousel */}
-            <div className="relative bg-secondary/30">
-              <div className="absolute top-4 left-4 z-10">
-                <span className="text-4xl font-bold text-primary/20">
-                  {currentCertIndex + 1}/{certifications.length}
-                </span>
-              </div>
-
-              <Carousel className="w-full" opts={{ loop: true }}>
-                <CarouselContent>
-                  {currentCert.images.map((img, imgIndex) => (
-                    <CarouselItem key={imgIndex}>
-                      <div
-                        className="aspect-video sm:aspect-[16/9] bg-muted flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() =>
-                          handleImageClick(currentCertIndex, imgIndex, img)
-                        }
-                      >
-                        <img
-                          src={img}
-                          alt={`${currentCert.title} ${imgIndex + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+            {/* Certification Carousel */}
+            <Carousel className="w-full" opts={{ loop: true }}>
+              <CarouselContent>
+                {certifications.map((cert, certIndex) => (
+                  <CarouselItem key={cert.id}>
+                    <div>
+                      {/* Certification Image */}
+                      <div className="relative bg-secondary/30">
+                        <div className="absolute top-4 left-4 z-10">
+                          <span className="text-4xl font-bold text-primary/20">
+                            {certIndex + 1}/{certifications.length}
+                          </span>
+                        </div>
+                        <div
+                          className="aspect-video sm:aspect-[16/9] bg-muted flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
+                          onClick={() =>
+                            handleImageClick(certIndex, 0, cert.images[0])
+                          }
+                        >
+                          <img
+                            src={cert.images[0]}
+                            alt={cert.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-2 sm:left-4" />
-                <CarouselNext className="right-2 sm:right-4" />
-              </Carousel>
-            </div>
 
-            {/* Certification Description */}
-            <div className="p-6 sm:p-8 lg:p-10">
-              <div className="mb-6">
-                <h4 className="text-2xl sm:text-3xl font-bold mb-2">
-                  {currentCert.title}
-                </h4>
-                <p className="text-muted-foreground">
-                  {currentCert.issuer} •{" "}
-                  <span className="text-primary">{currentCert.date}</span>
-                </p>
-              </div>
+                      {/* Certification Description */}
+                      <div className="p-6 sm:p-8 lg:p-10">
+                        <div className="mb-6">
+                          <h4 className="text-2xl sm:text-3xl font-bold mb-2">
+                            {cert.title}
+                          </h4>
+                          <p className="text-muted-foreground">
+                            {cert.issuer} •{" "}
+                            <span className="text-primary">{cert.date}</span>
+                          </p>
+                        </div>
 
-              <button className="flex gap-4 items-center mb-6">
-                <Badge
-                  variant="outline"
-                  className="bg-green-600 border-green-600 text-white px-3 py-1"
-                >
-                  Verified <CheckCircle className="w-3 h-3 inline-block ml-1" />
-                </Badge>
-              </button>
-
-              {/* Certification Navigation Dots */}
-              <div className="flex gap-2 items-center justify-center pt-4 border-t border-border">
-                <button
-                  onClick={handlePrevCert}
-                  className="p-2 rounded-lg hover:bg-secondary transition-colors"
-                  aria-label="Previous certification"
-                >
-                  <ChevronLeft className="w-5 h-5 text-muted-foreground hover:text-primary" />
-                </button>
-
-                <div className="flex gap-2">
-                  {certifications.map((cert, idx) => (
-                    <button
-                      key={cert.id}
-                      onClick={() => setCurrentCertIndex(idx)}
-                      className={`h-3 rounded-full transition-all ${
-                        idx === currentCertIndex
-                          ? "w-8 bg-primary"
-                          : "w-3 bg-muted-foreground/50 hover:bg-muted-foreground"
-                      }`}
-                      aria-label={`Go to ${cert.title}`}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  onClick={handleNextCert}
-                  className="p-2 rounded-lg hover:bg-secondary transition-colors"
-                  aria-label="Next certification"
-                >
-                  <ChevronRight className="w-5 h-5 text-muted-foreground hover:text-primary" />
-                </button>
-              </div>
-            </div>
+                        <button className="flex gap-4 items-center mb-6">
+                          <Badge
+                            variant="outline"
+                            className="bg-green-600 border-green-600 text-white px-3 py-1"
+                          >
+                            Verified{" "}
+                            <CheckCircle className="w-3 h-3 inline-block ml-1" />
+                          </Badge>
+                        </button>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2 sm:left-4" />
+              <CarouselNext className="right-2 sm:right-4" />
+            </Carousel>
           </div>
         </div>
       </div>
 
       {/* Fullscreen Viewer (same behavior as projects) */}
-      {fullscreenImage && currentCert && (
+      {fullscreenImage && certifications[fullscreenCertIndex] && (
         <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
           <button
             onClick={() => setFullscreenImage(null)}
@@ -265,37 +219,13 @@ const CertificationsSection = () => {
           >
             <img
               src={fullscreenImage}
-              alt={`${currentCert.title} fullscreen ${
+              alt={`${certifications[fullscreenCertIndex].title} fullscreen ${
                 fullscreenImageIndex + 1
               }`}
               className={`max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain transition-opacity duration-150 ${
                 isTransitioning ? "opacity-50" : "opacity-100"
               }`}
             />
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handlePrevImageWithTransition}
-              className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous slide</span>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handleNextImageWithTransition}
-              className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next slide</span>
-            </Button>
-          </div>
-
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
-            {fullscreenImageIndex + 1} / {currentCert.images.length}
           </div>
         </div>
       )}
