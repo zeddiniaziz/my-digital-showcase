@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 const ContactSection = () => {
   return (
-    <section id="contact" className="w-full pt-24 bg-background px-4">
+    <section id="contact" className="w-full pt-24 bg-background px-4 pb-28">
       <div className="md:container lg:container mx-auto border-t border-gray-300 py-4 border-b border-gray-300 py-3">
         <div className="md:text-center mb-16">
           <div className="text-center">
