@@ -121,7 +121,7 @@ const CertificationsSection = () => {
 
   return (
     <section id="certifications" className="w-full py-2 bg-background">
-      <div className="md:container lg:container mx-2 pt-5 border-t border-gray-300">
+      <div className="md:container lg:container mx-2 pt-5 border-t border-gray-300 md:px-28">
         <div className="md:text-center mb-12">
           <div className="text-center">
             <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
@@ -149,11 +149,7 @@ const CertificationsSection = () => {
                     <div>
                       {/* Certification Image */}
                       <div className="relative bg-secondary/30">
-                        <div className="absolute top-4 left-4 z-10">
-                          <span className="text-4xl font-bold text-primary/20">
-                            {certIndex + 1}/{certifications.length}
-                          </span>
-                        </div>
+                        
                         <div
                           className="aspect-video sm:aspect-[16/9] bg-muted flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
                           onClick={() =>
@@ -172,6 +168,9 @@ const CertificationsSection = () => {
                       <div className="p-6 sm:p-8 lg:p-10">
                         <div className="mb-6">
                           <h4 className="text-2xl sm:text-3xl font-bold mb-2">
+                            <span className="text-primary">
+                              {"0"}{certIndex + 1}
+                            </span>{" "}
                             {cert.title}
                           </h4>
                           <p className="text-muted-foreground">
