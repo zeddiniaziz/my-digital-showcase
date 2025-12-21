@@ -12,6 +12,7 @@ import {
   Globe,
   Eye,
   Download,
+  Phone,
 } from "lucide-react";
 
 const HeroSection = () => {
@@ -127,6 +128,14 @@ const HeroSection = () => {
             className="text-muted-foreground hover:text-foreground transition-colors group"
           >
             <Github className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+          </a>
+          <a
+            href="https://wa.me/21699662660"
+            target="_blank"
+            rel="noreferrer"
+            className="text-muted-foreground hover:text-green-400 transition-colors group"
+          >
+            <Phone className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
           </a>
           <a
             href="https://www.linkedin.com/in/zeddini-mohamed-aziz/"
