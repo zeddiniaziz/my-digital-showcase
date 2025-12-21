@@ -312,7 +312,7 @@ const ProjectsSection = () => {
   const currentProject = projects[fullscreenProjectIndex];
   return (
     <section id="projects" className="w-full py-24 bg-background">
-      <div className="md:container lg:container mx-2 border-t border-gray-300 py-4">
+      <div className="md:container lg:container mx-2 border-t border-gray-300 py-4 md:px-28">
         <div className="md:text-center mb-16">
           <div className="text-center">
             <h2 className="text-sm text-primary uppercase tracking-wider mb-4 inline-flex items-center gap-2">
