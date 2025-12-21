@@ -9,14 +9,14 @@ const ThankYouSection = () => {
         <div className="pb-20 space-y-8 animate-fade-in">
           {/* Badge */}
           <div className="inline-flex items-center gap-1 px-2 py-2 rounded-full border-2 border-primary/30 bg-primary/5">
-            <Heart className="w-5 h-5 text-primary" />
-            <span className="md:text-[20px] font-medium text-primary">
+            <Heart className="w-3 h-3 md:w-5 md:h-5 text-primary" />
+            <span className="text-msm md:text-[20px] font-medium text-primary">
               Thank you for your time!
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-m5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
             Let's Build Something Amazing{" "}
             <span className="text-primary">Together</span>
           </h2>
