@@ -6,7 +6,7 @@ const ThankYouSection = () => {
     <section className="pt-20 px-0 bg-gradient-to-b from-background to-primary/10 relative overflow-hidden">
       <AnimatedBackground />
       <div className="md:container lg:container mx-auto max-w-6xl text-center relative z-10">
-        <div className="space-y-8 animate-fade-in">
+        <div className="pb-20 space-y-8 animate-fade-in">
           {/* Badge */}
           <div className="inline-flex items-center gap-1 px-2 py-2 rounded-full border-2 border-primary/30 bg-primary/5">
             <Heart className="w-5 h-5 text-primary" />
@@ -22,7 +22,7 @@ const ThankYouSection = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-muted-foreground max-w-4xl mx-auto text-base sm:text-lg sm:px-0 leading-relaxedg">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg sm:px-0 leading-relaxedg">
             I'm excited about the opportunity to contribute to your team, learn
             from experienced developers, and help create impactful solutions.
             Ready to start this journey!
