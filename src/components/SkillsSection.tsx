@@ -59,6 +59,8 @@ const skills = {
     "Object-Relational Mapping (ORM)",
     "Object oriented programming (OOP)",
     "Asynchronous programming",
+    "Sockets",
+    "Multithreaded Server",
     "Testing",
   ],
 };
